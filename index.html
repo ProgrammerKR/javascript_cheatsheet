@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A detailed and professional JavaScript cheatsheet with clear examples and explanations in simple English.">
+  <meta name="keywords" content="JavaScript, cheatsheet, web development, programming, scripting">
+  <meta name="author" content="ProXentix">
+  <title>JavaScript Cheatsheet - ProX Professional Edition</title>
+  <link href="https://cdn.jsdelivr.net/gh/ProgrammerKR/ProXtyle@latest/dist/css/ProXtyle.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ProgrammerKR/ProXIcons@latest/css/proxicons.css">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      scroll-behavior: smooth;
+      background-color: #f5f6f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    section {
+      padding: 80px 20px;
+      border-bottom: 1px solid #e0e0e0;
+      background-color: #fff;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    .navbar {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      background-color: #0d6efd;
+    }
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      transition: color 0.3s ease;
+      color: #fff !important;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #b3d4ff !important;
+    }
+    .px-icon {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+      color: #007bff;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      color: #1a1a1a;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    code {
+      font-family: 'Fira Code', 'Courier New', monospace;
+    }
+    ul {
+      padding-left: 25px;
+      margin-bottom: 1.5rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+    .lead {
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: #555;
+    }
+    .example-box {
+      background-color: #e9ecef;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+    footer {
+      background-color: #0d6efd;
+      padding: 40px 0;
+    }
+    footer p {
+      font-size: 1rem;
+    }
+    @media (max-width: 992px) {
+      h2 {
+        font-size: 1.8rem;
+      }
+      section {
+        padding: 60px 15px;
+      }
+    }
+    @media (max-width: 576px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+      section {
+        padding: 40px 10px;
+      }
+      pre {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">JavaScript Cheatsheet</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#intro">Introduction</a></li>
+          <li class="nav-item"><a class="nav-link" href="#syntax">Syntax</a></li>
+          <li class="nav-item"><a class="nav-link" href="#variables">Variables</a></li>
+          <li class="nav-item"><a class="nav-link" href="#data-types">Data Types</a></li>
+          <li class="nav-item"><a class="nav-link" href="#functions">Functions</a></li>
+          <li class="nav-item"><a class="nav-link" href="#arrays">Arrays</a></li>
+          <li class="nav-item"><a class="nav-link" href="#objects">Objects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#conditionals">Conditionals</a></li>
+          <li class="nav-item"><a class="nav-link" href="#loops">Loops</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dom">DOM Manipulation</a></li>
+          <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="#async">Async JavaScript</a></li>
+          <li class="nav-item"><a class="nav-link" href="#error-handling">Error Handling</a></li>
+          <li class="nav-item"><a class="nav-link" href="#modules">Modules</a></li>
+          <li class="nav-item"><a class="nav-link" href="#es6">ES6 Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#json">JSON</a></li>
+          <li class="nav-item"><a class="nav-link" href="#fetch">Fetch API</a></li>
+          <li class="nav-item"><a class="nav-link" href="#best-practices">Best Practices</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-light text-center py-5">
+    <div class="container">
+      <h1 class="display-4">JavaScript Cheatsheet - ProX Edition</h1>
+      <p class="lead">A comprehensive guide to JavaScript with detailed explanations, practical examples, and best practices for building interactive websites.</p>
+    </div>
+  </header>
+
+  <section id="intro">
+    <div class="container">
+      <h2><i class="px px-info-circle"></i> What is JavaScript?</h2>
+      <p>JavaScript is a programming language that adds interactivity to websites. It runs in browsers to control webpage behavior, such as updating content, handling user inputs, and communicating with servers.</p>
+      <p>It works alongside HTML (structure) and CSS (styling) to create dynamic, user-friendly web experiences.</p>
+    </div>
+  </section>
+
+  <section id="syntax">
+    <div class="container">
+      <h2><i class="px px-code"></i> JavaScript Syntax</h2>
+      <p>JavaScript code consists of statements that perform tasks. It uses variables, functions, and logic to manipulate data and interact with users.</p>
+      <pre><code>console.log("Hello, World!");
+let name = "Kanishk";
+alert(`Welcome, ${name}!`);</code></pre>
+      <p>This code logs a message to the console and displays a browser alert with a name.</p>
+    </div>
+  </section>
+
+  <section id="variables">
+    <div class="container">
+      <h2><i class="px px-database"></i> Variables</h2>
+      <p>Variables store data for later use. JavaScript has three ways to declare variables:</p>
+      <ul>
+        <li><code>var</code>: Older way, function-scoped, can be redeclared.</li>
+        <li><code>let</code>: Block-scoped, can be reassigned, preferred for variables.</li>
+        <li><code>const</code>: Block-scoped, cannot be reassigned, used for constants.</li>
+      </ul>
+      <pre><code>let age = 25;
+const name = "Kanishk";
+age = 26; // Works
+// name = "John"; // Error: Cannot reassign const
+console.log(name, age);</code></pre>
+      <p>This declares a changeable <code>age</code> and a fixed <code>name</code>, then logs them.</p>
+    </div>
+  </section>
+
+  <section id="data-types">
+    <div class="container">
+      <h2><i class="px px-list"></i> Data Types</h2>
+      <p>JavaScript has several data types to represent different kinds of values:</p>
+      <ul>
+        <li><strong>Number</strong>: Integers or decimals (e.g., <code>42</code>, <code>3.14</code>).</li>
+        <li><strong>String</strong>: Text (e.g., <code>"Hello"</code>).</li>
+        <li><strong>Boolean</strong>: True or false (<code>true</code>, <code>false</code>).</li>
+        <li><strong>Array</strong>: Ordered list (e.g., <code>[1, 2, 3]</code>).</li>
+        <li><strong>Object</strong>: Key-value pairs (e.g., <code>{name: "Kanishk"}</code>).</li>
+        <li><strong>Null</strong>: Empty value (<code>null</code>).</li>
+        <li><strong>Undefined</strong>: Variable not assigned (<code>undefined</code>).</li>
+      </ul>
+      <pre><code>let num = 100;
+let text = "JavaScript";
+let isActive = true;
+let list = [1, 2, 3];
+let person = { name: "Kanishk", age: 15 };
+let empty = null;</code></pre>
+      <p>This shows different data types assigned to variables.</p>
+    </div>
+  </section>
+
+  <section id="functions">
+    <div class="container">
+      <h2><i class="px px-cog"></i> Functions</h2>
+      <p>Functions are reusable blocks of code that perform specific tasks. They can take inputs (parameters) and return outputs.</p>
+      <h3>Function Declaration</h3>
+      <pre><code>function greet(name) {
+  return `Hello, ${name}!`;
+}
+console.log(greet("Kanishk"));</code></pre>
+      <h3>Arrow Function (ES6)</h3>
+      <pre><code>const add = (a, b) => a + b;
+console.log(add(5, 3)); // 8</code></pre>
+      <p>The first example greets a user, while the second adds two numbers using a concise arrow function.</p>
+    </div>
+  </section>
+
+  <section id="arrays">
+    <div class="container">
+      <h2><i class="px px-list"></i> Arrays</h2>
+      <p>Arrays store ordered lists of data. They come with methods to manipulate the list.</p>
+      <ul>
+        <li><code>push()</code>: Adds to the end.</li>
+        <li><code>pop()</code>: Removes from the end.</li>
+        <li><code>shift()</code>: Removes from the start.</li>
+        <li><code>unshift()</code>: Adds to the start.</li>
+        <li><code>map()</code>: Transforms each element.</li>
+      </ul>
+      <pre><code>let fruits = ["apple", "banana"];
+fruits.push("orange");
+fruits.pop();
+console.log(fruits); // ["apple", "banana"]
+let doubled = fruits.map(item => item.toUpperCase());
+console.log(doubled); // ["APPLE", "BANANA"]</code></pre>
+      <p>This adds and removes items from an array and transforms it.</p>
+    </div>
+  </section>
+
+  <section id="objects">
+    <div class="container">
+      <h2><i class="px px-box"></i> Objects</h2>
+      <p>Objects store data as key-value pairs, ideal for structured information.</p>
+      <pre><code>const user = {
+  name: "Kanishk",
+  age: 15,
+  greet() {
+    return `Hi, I'm ${this.name}`;
+  }
+};
+console.log(user.name); // Kanishk
+console.log(user.greet()); // Hi, I'm Kanishk</code></pre>
+      <p>This creates an object with properties and a method, then accesses them.</p>
+    </div>
+  </section>
+
+  <section id="conditionals">
+    <div class="container">
+      <h2><i class="px px-check"></i> Conditionals</h2>
+      <p>Conditionals control program flow based on conditions using <code>if</code>, <code>else</code>, or <code>switch</code>.</p>
+      <pre><code>let age = 15;
+if (age >= 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+}</code></pre>
+      <p>This checks if a user is an adult or minor based on age.</p>
+    </div>
+  </section>
+
+  <section id="loops">
+    <div class="container">
+      <h2><i class="px px-repeat"></i> Loops</h2>
+      <p>Loops repeat code until a condition is met. Common types include <code>for</code>, <code>while</code>, and <code>forEach</code>.</p>
+      <pre><code>for (let i = 0; i < 3; i++) {
+  console.log(i); // 0, 1, 2
+}
+let numbers = [1, 2, 3];
+numbers.forEach(num => console.log(num));</code></pre>
+      <p>This demonstrates a <code>for</code> loop and a <code>forEach</code> loop for arrays.</p>
+    </div>
+  </section>
+
+  <section id="dom">
+    <div class="container">
+      <h2><i class="px px-globe"></i> DOM Manipulation</h2>
+      <p>The Document Object Model (DOM) lets JavaScript interact with HTML elements.</p>
+      <ul>
+        <li><code>document.getElementById()</code>: Selects an element by ID.</li>
+        <li><code>querySelector()</code>: Selects by CSS selector.</li>
+        <li><code>innerHTML</code>: Changes element content.</li>
+        <li><code>style</code>: Modifies CSS styles.</li>
+      </ul>
+      <pre><code>const title = document.getElementById("title");
+title.innerHTML = "Welcome!";
+title.style.color = "blue";</code></pre>
+      <p>This changes the text and color of an element with ID <code>title</code>.</p>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="container">
+      <h2><i class="px px-mouse"></i> Events</h2>
+      <p>Events handle user actions like clicks, keypresses, or mouse movements.</p>
+      <pre><code>const button = document.querySelector("button");
+button.addEventListener("click", () => {
+  alert("Button clicked!");
+});</code></pre>
+      <p>This shows an alert when a button is clicked.</p>
+    </div>
+  </section>
+
+  <section id="async">
+    <div class="container">
+      <h2><i class="px px-clock"></i> Async JavaScript</h2>
+      <p>Asynchronous JavaScript handles tasks like fetching data without blocking the program.</p>
+      <h3>Promises</h3>
+      <pre><code>const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("Success!"), 1000);
+});
+myPromise.then(result => console.log(result));</code></pre>
+      <h3>Async/Await</h3>
+      <pre><code>async function fetchData() {
+  let response = await fetch("https://api.example.com/data");
+  let data = await response.json();
+  console.log(data);
+}</code></pre>
+      <p>These examples show a Promise resolving after 1 second and an async function fetching data.</p>
+    </div>
+  </section>
+
+  <section id="error-handling">
+    <div class="container">
+      <h2><i class="px px-warning"></i> Error Handling</h2>
+      <p>Use <code>try/catch</code> to handle errors gracefully.</p>
+      <pre><code>try {
+  let data = JSON.parse("invalid json");
+} catch (error) {
+  console.error("Error:", error.message);
+}</code></pre>
+      <p>This catches and logs an error when parsing invalid JSON.</p>
+    </div>
+  </section>
+
+  <section id="modules">
+    <div class="container">
+      <h2><i class="px px-box"></i> Modules</h2>
+      <p>Modules organize code by splitting it into reusable files.</p>
+      <pre><code>// math.js
+export const add = (a, b) => a + b;
+
+// main.js
+import { add } from './math.js';
+console.log(add(2, 3)); // 5</code></pre>
+      <p>This exports a function from one file and imports it in another.</p>
+    </div>
+  </section>
+
+  <section id="es6">
+    <div class="container">
+      <h2><i class="px px-star"></i> ES6 Features</h2>
+      <p>ES6 (ECMAScript 2015) introduced modern JavaScript features.</p>
+      <ul>
+        <li><code>let/const</code>: Block-scoped variables.</li>
+        <li><code>Arrow Functions</code>: Concise function syntax.</li>
+        <li><code>Destructuring</code>: Unpack arrays/objects.</li>
+        <li><code>Template Literals</code>: String interpolation with <code>`</code>.</li>
+        <li><code>Spread/Rest</code>: Handle arrays/objects dynamically.</li>
+      </ul>
+      <pre><code>const [a, b] = [1, 2];
+const { name, age } = { name: "Kanishk", age: 15 };
+console.log(a, b, name, age); // 1, 2, Kanishk, 15</code></pre>
+      <p>This demonstrates destructuring to extract values.</p>
+    </div>
+  </section>
+
+  <section id="json">
+    <div class="container">
+      <h2><i class="px px-file"></i> JSON</h2>
+      <p>JSON (JavaScript Object Notation) is a format for storing and exchanging data.</p>
+      <pre><code>const jsonString = '{"name": "Kanishk", "age": 15}';
+const obj = JSON.parse(jsonString);
+console.log(obj.name); // Kanishk
+const backToJson = JSON.stringify(obj);
+console.log(backToJson);</code></pre>
+      <p>This converts JSON to an object and back to JSON.</p>
+    </div>
+  </section>
+
+  <section id="fetch">
+    <div class="container">
+      <h2><i class="px px-globe"></i> Fetch API</h2>
+      <p>The Fetch API makes HTTP requests to fetch data from servers.</p>
+      <pre><code>fetch("https://api.example.com/data")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Error:", error));</code></pre>
+      <p>This fetches data from an API and logs it, handling errors if they occur.</p>
+    </div>
+  </section>
+
+  <section id="best-practices">
+    <div class="container">
+      <h2><i class="px px-star"></i> Best Practices</h2>
+      <p>Write clean, efficient, and maintainable JavaScript with these tips:</p>
+      <ul>
+        <li>Use <code>let</code> or <code>const</code> instead of <code>var</code>.</li>
+        <li>Write descriptive variable and function names.</li>
+        <li>Handle errors with <code>try/catch</code>.</li>
+        <li>Use arrow functions for concise code.</li>
+        <li>Organize code with modules and comments.</li>
+        <li>Test code across browsers for compatibility.</li>
+        <li>Avoid global variables to prevent conflicts.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="text-white text-center">
+    <div class="container">
+      <p class="mb-0">Crafted with <i class="px px-heart"></i> by <strong>ProXentix</strong> | © 2025</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
